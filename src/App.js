@@ -549,31 +549,43 @@ const App = () => {
       }
 
 return (
-<div>
+<div style={{
+    display: 'flex',
+    backgroundColor: 'lightBlue',
+}}>
     <div style={{
-        display: 'grid', 
-        flexDirection: 'column', 
-        padding: '10px', 
-        justifyContent: 'center', 
         }}>
         <div style={{
-            display: 'grid',
-            justifyContent: 'center',
-            padding: 10,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            padding: 20,
             }}>
                 <input id="form" style={{
-                width: '500px', 
-                height: '30px',
+                width: '400px', 
+                height: '40px',
             }}/>
-            <button onClick={() => search()}>SEARCH</button>
+            <button style={{
+                backgroundColor: 'white',
+                borderWidth: '1px',
+                fontFamily: 'avenir next',
+                borderColor: 'black',
+                borderRadius: '7px',
+                width:'200px',
+                alignItems: 'center',
+                padding: '10px',
+                fontSize: '18px',
+            }}
+            onClick={() => search()}>Find a Movie</button>
         </div>
         <div style={{
             display: 'grid',
             justifyContent: 'center',
+            paddingTop: '50px',
             }}>
             <div style={{
-                width: WIDTH,
-                height: HEIGHT,
+                width: WIDTH * 1.5,
+                height: HEIGHT * 1.5,
                 border: '5px solid black',
                 
             }}>
@@ -584,23 +596,60 @@ return (
                     height: '100%',
                 }}/>
             </div>
+            </div>
+
             <div style={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'start',
             padding: 10,
             }}>
-                <button onClick={() => increment()}>NEXT MOVIE</button> 
-                <button onClick={() => decrement()}>PREV MOVIE</button> 
+                <button style={{
+                backgroundColor: 'white',
+                borderWidth: '1px',
+                fontFamily: 'avenir next',
+                borderColor: 'black',
+                borderRadius: '7px',
+                width:'100px',
+                alignItems: 'center',
+                padding: '3px',
+                fontSize: '15px',
+            }} onClick={() => increment()}>Next</button> 
+                <button style={{
+                backgroundColor: 'white',
+                borderWidth: '1px',
+                fontFamily: 'avenir next',
+                borderColor: 'black',
+                borderRadius: '7px',
+                width:'100px',
+                alignItems: 'center',
+                padding: '3px',
+                fontSize: '15px',
+            }}  onClick={() => decrement()}>Previous</button> 
             </div>
+            <div style={{
+                display: 'flex',
+                paddingTop: '210px',
+                justifyContent: 'center',
+            }}>
             <button style={{
                 padding: 10,
+                backgroundColor: 'white',
+                borderWidth: '1px',
+                fontFamily: 'avenir next',
+                borderColor: 'black',
+                borderRadius: '7px',
+                width:'300px',
+                alignItems: 'center',
+                padding: '10px',
+                fontSize: '15px',
             }} onClick={() => {
                 setIsExporting(true)
                 // exportComponentAsJPEG(exportRef)
                 }
-            }>EXPORT</button> 
-        </div>
+            }>Export Design</button> 
+            </div>
+</div>
         {/* <div>
             <button onClick={() => save()}>SAVE</button> 
             <input id="save" defaultValue="project name"/>
@@ -609,6 +658,14 @@ return (
             <button onClick={() => load()}>LOAD</button> 
             <input id="load" defaultValue="project name"/>
         </div> */}
+<div style={{
+        paddingTop: '50px'
+    }}>
+    <div style={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+        padding: '10px',
+    }}>
     <div id="container" style={{
         width: WIDTH * 6 * multiplier,
         height: HEIGHT * 3 * multiplier,
@@ -620,6 +677,7 @@ return (
         {images}
     </div>
     </div>
+</div>
 </div>
     )
 }
